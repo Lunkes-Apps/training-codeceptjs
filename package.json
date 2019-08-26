@@ -1,0 +1,20 @@
+{
+  "name": "testblz",
+  "version": "1.0.0",
+  "description": "Test to automacaocombatista",
+  "main": "AccessTestPage_test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+      "codeceptjs": "codeceptjs run --features --reporter mochawesome",
+      "generateSteps": "codeceptjs gherkin:snippets"
+  },
+  "author": "Alexandre Lunkes",
+  "license": "ISC",
+  "dependencies": {
+    "codeceptjs": "^2.3.0",
+    "mochawesome": "^4.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.0"
+  }
+}
