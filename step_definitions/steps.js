@@ -1,22 +1,14 @@
-const { I, homePage } = inject();
+const { I, homePage, radioECheckBoxPage } = inject();
+var assert = require('assert');
 
-Given('I am on the Page', () => {
-  homePage.access();
+Given('/^I am on the page "(.*?)"$/', (page) => {
+  I.amOnPage(page);
 });
 
 When('I open the form', () => {
   homePage.clickOnItemOfList('Formulário');
   homePage.clickOnItemOfList('Criar Usuários');
 });
-
-// When('I fill out Name .*', (name) => {
-//   homePage.fillFieldNewUser('Nome','Alexandre');
-//   // homePage.fillFieldNewUser('Email','alexandre@email.com');
-//   // homePage.fillFieldNewUser('Universidade','uninter');
-//   // homePage.fillFieldNewUser('Gênero','Masculino');
-//   // homePage.fillFieldNewUser('Último nome','Lunkes');
-//   // console.log(list)
-// });
 
 When('I click on save button', () => {
   homePage.clickCriar();
@@ -37,4 +29,20 @@ When('I fill out Email {string}', (email) => {
 
 When('I fill out Last Name {string}', (lastname) => {
   homePage.fillFieldNewUser('Último nome',lastname);
+});
+
+When('I click in radio box {string}', (radio) => {
+  radioECheckBoxPage.clickOnLabel(radio);
+});
+
+When('I click in check box {string}', (check) => {
+  radioECheckBoxPage.clickOnLabel(check);
+});
+
+Then('The check box {string} is checked', (check) => {
+  radioECheckBoxPage.verifyChecked(check);
+});
+
+Then('The radio box {string} is checked', (check) => {
+  radioECheckBoxPage.verifyChecked(check);
 });

@@ -3,7 +3,7 @@ exports.config = {
   timeout:'10',
   helpers: {
     "Mochawesome": {
-      "uniqueScreenshotNames": "true"
+    "uniqueScreenshotNames": "true"
   },
     WebDriver: {
       url: 'https://automacaocombatista.herokuapp.com/',
@@ -13,7 +13,8 @@ exports.config = {
   },
   include: {
     I: './steps_file.js',
-    homePage: './pages/Home.js'
+    homePage: './pages/Home.js',
+    radioECheckBoxPage: './pages/RadioECheckBox.js'
   },
   mocha: {
     "reporterOptions": {
