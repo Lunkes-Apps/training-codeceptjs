@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "codeceptjs": "codeceptjs run --features --reporter mochawesome",
     "generateSteps": "codeceptjs gherkin:snippets",
-    "start-docker": "docker run -p 4040:4040 -p 5050:5050 -e CHECK_RESULTS_EVERY_SECONDS=3 -e KEEP_HISTORY='TRUE' -v ${PWD}/output:/app/allure-results frankescobar/allure-docker-service",
+    "allure:build": "docker run -d --name allure -p 4040:4040 -p 5050:5050 -e CHECK_RESULTS_EVERY_SECONDS=3 -e KEEP_HISTORY='TRUE' -v ${PWD}/output:/app/allure-results frankescobar/allure-docker-service",
+    "allure:start": "docker start allure",
+    "allure:stop": "docker stop allure",
     "codeceptJs-report":"codeceptjs run --features --reporter mochawesome --plugins allure"
   },
   "author": "Alexandre Lunkes",
