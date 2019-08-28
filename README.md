@@ -15,4 +15,6 @@ In this project you can use:
 * `npm run allure:build` (only on the first time to use)
 * `npm run allure:start` (to start the container)
 * `npm run allure:stop` (to stop the container)
+## Run the test
+* `npm run codeceptJs:test`
 
